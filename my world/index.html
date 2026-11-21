@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>مين أنا؟ رحلة اكتشاف المجموعة الشمسية</title><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070a24;--pu:#7c3aed;--bl:#38bdf8;--go:#fbbf24;--gr:#34d399;--rd:#f87171;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}
+body{background:radial-gradient(ellipse at top,#1e1b4b,#070a24 60%,#000);color:#fff;font-family:Cairo,Tahoma,sans-serif;font-size:18px;min-height:100vh;overflow-x:hidden}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+#stars i{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;animation:tw 3s infinite alternate}
+@keyframes tw{from{opacity:.15}to{opacity:1}}
+#app{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:14px}
+h1{font-size:clamp(28px,6vw,52px);margin:8px 0;font-weight:900;background:linear-gradient(90deg,var(--bl),#c084fc,var(--go));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(22px,4vw,32px);margin:6px 0;color:var(--go)}
+.card{background:#ffffff14;border:1px solid #ffffff2a;border-radius:20px;padding:18px;backdrop-filter:blur(6px);margin:10px 0}
+.c{text-align:center}
+button,select,input{font-family:inherit;font-size:18px}
+.btn{background:linear-gradient(135deg,var(--pu),#2563eb);color:#fff;border:0;border-radius:14px;padding:12px 22px;font-weight:700;cursor:pointer;margin:4px;transition:.15s;box-shadow:0 4px 14px #0006}
+.btn:hover{transform:translateY(-2px) scale(1.03)}.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.btn.g{background:linear-gradient(135deg,#059669,#10b981)}.btn.o{background:linear-gradient(135deg,#d97706,#f59e0b)}.btn.r{background:linear-gradient(135deg,#b91c1c,#ef4444)}.btn.s{background:#ffffff1f;box-shadow:none;padding:8px 14px;font-size:15px}
+.big{font-size:26px;padding:16px 38px}
+input,select{background:#0b1030;color:#fff;border:2px solid #6366f1;border-radius:12px;padding:10px 14px;width:100%;max-width:320px;margin:5px}
+.nav{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;margin-bottom:6px}
+.sb{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chip{background:#ffffff1a;border:2px solid #ffffff30;border-radius:14px;padding:6px 16px;min-width:120px;text-align:center}
+.chip.on{border-color:var(--go);box-shadow:0 0 16px #fbbf2488;background:#fbbf2422}
+.chip b{display:block;font-size:26px;color:var(--go)}
+.pl{border-radius:50%;position:relative;flex:none;box-shadow:inset -8px -8px 18px #0008,0 0 22px #ffffff22;animation:fl 4s ease-in-out infinite alternate}
+.pl .ring{position:absolute;left:-35%;right:-35%;top:38%;height:24%;border:5px solid #e8d9a8aa;border-radius:50%;transform:rotate(-18deg);box-shadow:0 0 8px #0006}
+@keyframes fl{to{transform:translateY(-8px)}}
+.hint{background:#1e1b4b;border-right:6px solid var(--bl);border-radius:12px;padding:10px 14px;margin:8px 0;animation:in .5s}
+@keyframes in{from{opacity:0;transform:translateX(30px)}}
+.pts{font-size:20px;color:var(--gr);font-weight:900}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.rowp{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:flex-end;min-height:90px}
+.slot{min-height:92px;border:2px dashed #ffffff55;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;cursor:pointer;font-size:14px}
+.slot.ok{border-color:var(--gr);background:#34d39922}.slot.bad{border-color:var(--rd);background:#f8717122}
+.pc{cursor:pointer;padding:6px;border-radius:12px;border:2px solid transparent;text-align:center;font-size:14px}.pc.sel{border-color:var(--go);background:#fbbf2422}
+.msg{font-size:22px;font-weight:700;min-height:34px}
+.ok{color:var(--gr)}.no{color:var(--rd)}
+.cf{position:fixed;top:-20px;width:10px;height:14px;z-index:50;animation:cfa linear forwards;pointer-events:none}
+@keyframes cfa{to{transform:translateY(110vh) rotate(720deg)}}
+.stage{position:relative;width:340px;height:340px;margin:10px auto;direction:ltr;max-width:100%}
+.sun{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px;border-radius:50%;background:radial-gradient(#fff7ae,#f59e0b);box-shadow:0 0 40px #f59e0b}
+.orb{position:absolute;left:50%;top:50%;border:1px dashed #ffffff30;border-radius:50%;animation:sp linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.orb .pl{position:absolute;left:50%;top:0;animation:none;box-shadow:inset -2px -2px 4px #0008}
+.rocket{font-size:60px;display:inline-block;animation:rk 3s ease-in-out infinite alternate}
+@keyframes rk{from{transform:translate(-30px,10px) rotate(-8deg)}to{transform:translate(30px,-12px) rotate(8deg)}}
+.win{font-size:clamp(40px,10vw,80px);animation:pop 1s infinite alternate}@keyframes pop{to{transform:scale(1.12)}}
+.mystery{width:150px;height:150px;margin:10px auto;border-radius:50%;background:radial-gradient(circle at 30% 30%,#6366f1,#1e1b4b);display:flex;align-items:center;justify-content:center;font-size:70px;animation:fl 2s infinite alternate;box-shadow:0 0 40px #6366f188}
+</style></head><body><div id="stars"></div><div id="app"></div>
+<script>
+const P=[
+{n:"عطارد",a:["#d1c7b8","#6b5f55"],z:30,h:["هو أصغر كواكب المجموعة الشمسية.","تتغير حرارته بشدة بين نهار حارق وليل شديد البرودة.","لا يملك أي قمر.","سطحه مليء بالحفر مثل سطح القمر.","أقرب الكواكب إلى الشمس."],p:["أصغر الكواكب حجمًا","أقرب كوكب إلى الشمس","لا يملك أقمارًا"]},
+{n:"الزهرة",a:["#fde8b0","#c9822b"],z:44,h:["يدور حول نفسه في عكس اتجاه معظم الكواكب.","يُلقب بتوأم الأرض لتقارب حجمه من حجمها.","غلافه الجوي كثيف جدًا ويحتوي على ثاني أكسيد الكربون.","هو أشد الكواكب حرارة رغم أنه ليس الأقرب للشمس.","الكوكب الثاني من الشمس، ويظهر لامعًا قرب الشروق أو الغروب."],p:["أسخن كواكب المجموعة الشمسية","توأم الأرض في الحجم","الكوكب الثاني من الشمس"]},
+{n:"الأرض",a:["#4aa3ff","#14532d"],z:46,h:["نحو 71٪ من سطحه مغطى بالمياه.","له قمر طبيعي واحد.","غلافه الجوي يحتوي على الأكسجين والنيتروجين.","الكوكب الثالث في البعد عن الشمس.","هو الكوكب الوحيد المعروف بوجود حياة عليه، وهو بيتنا."],p:["الكوكب الأزرق","له قمر واحد","عليه حياة وماء ومحيطات"]},
+{n:"المريخ",a:["#f87155","#7f1d1d"],z:38,h:["يُعرف بالكوكب الأحمر.","توجد على سطحه آثار براكين ضخمة.","يمتلك قمرين طبيعيين صغيرين.","يقع في الترتيب الرابع من الشمس.","أُرسلت إليه مركبات وروبوتات فضائية عديدة لاستكشافه."],p:["لونه أحمر بسبب صدأ الحديد","له قمران","الكوكب الرابع من الشمس"]},
+{n:"المشتري",a:["#f0cfa0","#a0623a"],z:100,h:["تدور حوله عشرات الأقمار، منها أربعة كبيرة اكتشفها جاليليو.","يومه قصير جدًا، نحو 10 ساعات فقط.","فيه عاصفة عملاقة تُسمى «البقعة الحمراء».","الكوكب الخامس من الشمس، ويقع بعد حزام الكويكبات.","أكبر كواكب المجموعة الشمسية."],p:["أكبر الكواكب","كوكب غازي","عليه البقعة الحمراء"]},
+{n:"زحل",a:["#f5e3a8","#b8923a"],z:84,r:1,h:["كثافته قليلة جدًا، فلو وُضع في ماء ضخم لطفا.","كوكب غازي من أقماره تيتان.","الكوكب السادس في البعد عن الشمس.","ثاني أكبر كواكب المجموعة الشمسية.","تحيط به حلقات جميلة من الجليد والصخور."],p:["له حلقات واضحة","ثاني أكبر الكواكب","الكوكب السادس"]},
+{n:"أورانوس",a:["#a5f3fc","#0e7490"],z:58,h:["اكتُشف بالتلسكوب عام 1781م.","يدور وهو مائل على جنبه تقريبًا.","لونه أزرق مخضر بسبب غاز الميثان.","الكوكب السابع من الشمس.","كوكب جليدي عملاق له حلقات رفيعة."],p:["لونه أزرق مخضر","يدور على جنبه","الكوكب السابع"]},
+{n:"نبتون",a:["#6aa0ff","#1e3a8a"],z:56,h:["تهب عليه من أسرع الرياح في المجموعة الشمسية.","أكبر أقماره اسمه تريتون.","لونه أزرق داكن.","أبعد كواكب المجموعة الشمسية عن الشمس.","الكوكب الثامن والأخير في الترتيب."],p:["أبعد الكواكب عن الشمس","لونه أزرق داكن","الكوكب الثامن"]}];
+const $=document.getElementById('app');let ac;
+let S={scr:'start',nt:2,names:['','','','','','','',''],teams:[],ordr:[0,1,2,3,4,5,6,7],r:0,h:1,turn:0,failed:[],done:false,msg:'',ord:null,act:null};
+try{const x=JSON.parse(localStorage.getItem('gp')||'null');if(x&&x.teams&&x.teams.length)S=x}catch(e){}
+const sv=()=>{try{localStorage.setItem('gp',JSON.stringify(S))}catch(e){}};
+const st=document.getElementById('stars');for(let i=0;i<90;i++){const d=document.createElement('i');d.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*3}s;transform:scale(${1+Math.random()*1.5})`;st.appendChild(d)}
+function snd(t){try{ac=ac||new AudioContext();const q=t=='ok'?[[523,0],[659,.12],[784,.24],[1046,.36]]:t=='no'?[[220,0],[160,.18]]:[[600,0]];q.forEach(([f,d])=>{const o=ac.createOscillator(),g=ac.createGain();o.type=t=='no'?'sawtooth':'triangle';o.frequency.value=f;g.gain.setValueAtTime(.15,ac.currentTime+d);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+d+.25);o.connect(g);g.connect(ac.destination);o.start(ac.currentTime+d);o.stop(ac.currentTime+d+.26)})}catch(e){}}
+function conf(){const c=['#fbbf24','#38bdf8','#f472b6','#34d399','#a78bfa'];for(let i=0;i<80;i++){const d=document.createElement('div');d.className='cf';d.style.cssText=`left:${Math.random()*100}%;background:${c[i%5]};animation-duration:${2+Math.random()*2.5}s;animation-delay:${Math.random()*.6}s`;document.body.appendChild(d);setTimeout(()=>d.remove(),5500)}}
+const pl=(i,s)=>`<div class="pl" style="width:${s}px;height:${s}px;background:radial-gradient(circle at 30% 30%,${P[i].a[0]},${P[i].a[1]})">${P[i].r?'<i class="ring"></i>':''}</div>`;
+function sys(){let o='';P.forEach((p,i)=>{const d=84+i*32,s=Math.max(8,Math.round(p.z/7));o+=`<div class="orb" style="width:${d}px;height:${d}px;margin:${-d/2}px;animation-duration:${6+i*5}s"><div class="pl" style="width:${s}px;height:${s}px;margin-left:${-s/2}px;top:${-s/2}px;background:radial-gradient(circle at 30% 30%,${p.a[0]},${p.a[1]})"></div></div>`});return`<div class="stage"><div class="sun"></div>${o}</div>`}
+const go=s=>{S.scr=s;sv();R()};
+const esc=s=>String(s).replace(/[<>&"]/g,'');const cp=()=>(S.ordr&&S.ordr.length==8?S.ordr:[0,1,2,3,4,5,6,7])[S.r];
+function bar(){if(!S.teams.length)return'';return`<div class="nav"><button class="btn s" onclick="S.r=Math.min(S.r,7);go('play')">🔭 الجولات</button><button class="btn s" onclick="startOrd()">🪐 رتب الكواكب</button><button class="btn s" onclick="go('score')">🏆 النتائج</button><button class="btn s" onclick="resetAll(this)">↺ إعادة</button></div><div class="sb">${S.teams.map((t,i)=>`<div class="chip ${S.scr=='play'&&i==S.turn&&!S.done?'on':''}">${esc(t.n)}<b>${t.s}</b></div>`).join('')}</div>`}
+function R(){const f={start,setup,rules,play,ord,score,win}[S.scr]||start;$.innerHTML=(S.scr=='start'||S.scr=='setup'||S.scr=='rules'?'':bar())+f();window.scrollTo(0,0)}
+function start(){return`<div class="c card"><div class="rocket">🚀</div><h1>مين أنا؟<br>رحلة اكتشاف المجموعة الشمسية</h1><h2>Guess the Planet 🚀</h2>${sys()}<button class="btn big g" onclick="snd('t');go('setup')">ابدأ الرحلة</button>${S.teams.length?`<br><button class="btn o" onclick="go('play')">متابعة اللعبة المحفوظة ▶</button>`:''}</div>`}
+function setup(){return`<div class="card c"><h2>👩‍🚀 اكتب أسماء اللاعبين</h2>${Array.from({length:S.nt},(_,i)=>`<div><input value="${esc(S.names[i]||'')}" oninput="S.names[${i}]=this.value" placeholder="اسم اللاعب ${i+1}"></div>`).join('')}<button class="btn s" ${S.nt>=8?'disabled':''} onclick="S.nt++;R()">➕ إضافة لاعب</button><button class="btn s" ${S.nt<=1?'disabled':''} onclick="S.nt--;R()">➖ حذف لاعب</button><br><button class="btn big g" onclick="S.teams=Array.from({length:S.nt},(_,i)=>({n:((S.names[i]||'')+'').trim()||'لاعب '+(i+1),s:0}));S.ordr=[0,1,2,3,4,5,6,7].sort(()=>Math.random()-.5);S.r=0;S.h=1;S.turn=0;S.failed=[];S.done=false;S.msg='';S.ord=null;go('play')">ابدأ الرحلة 🚀</button></div>`}
+function rules(){return`<div class="card"><h2>📜 قواعد الرحلة</h2><ul style="line-height:2"><li>كل فريق هو طاقم رواد فضاء، ومهمته اكتشاف كواكب المجموعة الشمسية 🧑‍🚀</li><li>8 جولات: في كل جولة كوكب غامض و5 تلميحات تظهر واحدًا بعد الآخر.</li><li>النقاط: بعد التلميح الأول 50، ثم 40، 30، 20، وبعد الخامس 10.</li><li>الإجابة الخاطئة بلا نقاط، وتنتقل الفرصة للفريق التالي.</li><li>🪐 «رتب الكواكب»: رتّب الكواكب من الأقرب للشمس إلى الأبعد.</li><li>المعلم يتحكم في الجولات والنقاط من الأزرار أعلى الشاشة.</li></ul><div class="c">${sys()}<p>هكذا تدور الكواكب حول الشمس! يمكن للطلاب تمثيلها بكرات ملونة بنفس الترتيب.</p><button class="btn big g" onclick="go('play')">انطلاق 🚀</button></div></div>`}
+function play(){const q=cp(),p=P[q],t=S.teams[S.turn],pts=60-10*S.h;
+let h=p.h.slice(0,S.h).map((x,i)=>`<div class="hint"><b>تلميح ${i+1}:</b> ${x}</div>`).join('');
+let top=`<div class="card"><div class="c"><h2>الجولة ${S.r+1} من 8</h2></div>`;
+if(S.done)return top+`<div class="c">${pl(q,Math.min(p.z+60,160))}<h1>${p.n}</h1><div class="msg">${S.msg}</div></div>${h}<div class="c">${S.r<7?`<button class="btn big g" onclick="nextR()">الجولة التالية ←</button>`:`<button class="btn big o" onclick="go('score')">النتائج 🏆</button>`}</div></div>`;
+return top+`<div class="mystery">❓</div><div class="c"><b>الدور على: ${esc(t.n)}</b> — <span class="pts">الجائزة الآن ${pts} نقطة</span></div>${h}<div class="c"><button class="btn o" ${S.h>=5?'disabled':''} onclick="S.h++;snd('t');sv();R()">💡 إظهار التلميح التالي</button><br><select id="sel"><option value="">اختر اسم الكوكب...</option>${P.map(q=>`<option>${q.n}</option>`).join('')}</select><br><button class="btn g big" onclick="conf2()">✔ تأكيد الإجابة</button><button class="btn r" onclick="reveal()">كشف الإجابة</button><div class="msg no">${S.msg}</div></div></div>`}
+function conf2(){const v=document.getElementById('sel').value;if(!v){S.msg='اختر كوكبًا أولاً!';return R()}
+if(v==P[cp()].n){S.teams[S.turn].s+=60-10*S.h;S.done=true;S.msg=`<span class="ok">🎉 أحسنت يا ${esc(S.teams[S.turn].n)}! +${60-10*S.h} نقطة</span>`;snd('ok');conf()}
+else{S.failed.push(S.turn);snd('no');let n=-1;for(let k=1;k<=S.nt;k++){const j=(S.turn+k)%S.nt;if(!S.failed.includes(j)){n=j;break}}
+if(n<0){S.done=true;S.msg='لم يصل أحد للإجابة. هذه هي الإجابة الصحيحة 👆'}else{S.msg=`❌ إجابة خاطئة! الفرصة الآن لـ ${esc(S.teams[n].n)}`;S.turn=n}}
+sv();R()}
+function reveal(){S.done=true;S.h=5;S.msg='تم كشف الإجابة.';sv();R()}
+function nextR(){S.r++;S.h=1;S.turn=S.r%S.nt;S.failed=[];S.done=false;S.msg='';go('play')}
+function startOrd(){S.ord={pool:[0,1,2,3,4,5,6,7].sort(()=>Math.random()-.5),slots:Array(8).fill(null),sel:null,chk:false,paid:false};go('ord')}
+function ord(){if(!S.ord)startOrd();const o=S.ord;
+const ok=o.chk&&o.slots.every((v,i)=>v===i);
+return`<div class="card c"><h2>🪐 رتب الكواكب</h2><p>اضغط على كوكب ثم على مكانه، أو اسحبه وأفلته. الترتيب من الأقرب للشمس ☀️ إلى الأبعد.</p><div class="grid" style="direction:rtl">${o.slots.map((v,i)=>`<div class="slot ${o.chk?(v===i?'ok':'bad'):''}" ondragover="event.preventDefault()" ondrop="drp(event,${i})" onclick="put(${i})"><small>${i+1}</small>${v!==null?`${pl(v,36)}${P[v].n}`:'—'}</div>`).join('')}</div><h2>الكواكب المتاحة</h2><div class="rowp">${o.pool.map(v=>`<div class="pc ${o.sel===v?'sel':''}" draggable="true" ondragstart="event.dataTransfer.setData('t',${v})" onclick="S.ord.sel=${v};R()">${pl(v,Math.max(34,P[v].z/1.6))}${P[v].n}</div>`).join('')||'<i>تم وضع كل الكواكب</i>'}</div>
+<button class="btn g" ${o.pool.length?'disabled':''} onclick="S.ord.chk=true;${''}snd(S.ord.slots.every((v,i)=>v===i)?'ok':'no');if(S.ord.slots.every((v,i)=>v===i))conf();R()">تحقق من الترتيب</button><button class="btn s" onclick="startOrd()">خلط من جديد</button>
+${o.chk&&!ok?`<div class="msg no">بعض الأماكن غير صحيحة (باللون الأحمر). اضغط عليها لتصحيحها.</div>`:''}
+${ok?`<div class="msg ok">🎉 ترتيب صحيح!</div>${o.paid?'':'<div>امنح +30 نقطة لـ:</div>'+S.teams.map((t,i)=>`<button class="btn o" onclick="S.teams[${i}].s+=30;S.ord.paid=true;sv();R()">${esc(t.n)}</button>`).join('')}`:''}</div>`}
+function put(i){const o=S.ord;if(o.slots[i]!==null){o.pool.push(o.slots[i]);o.slots[i]=null;o.chk=false}else if(o.sel!==null){o.slots[i]=o.sel;o.pool=o.pool.filter(x=>x!==o.sel);o.sel=null}R()}
+function drp(e,i){e.preventDefault();const v=+e.dataTransfer.getData('t');const o=S.ord;if(o.slots[i]!==null)o.pool.push(o.slots[i]);o.slots[i]=v;o.pool=o.pool.filter(x=>x!==v);o.chk=false;R()}
+function startAct(){S.act={t:Math.floor(Math.random()*S.nt),p:Math.floor(Math.random()*8),sh:false,paid:false};go('act')}
+function act(){if(!S.act)startAct();const a=S.act;
+return`<div class="card c"><h2>🎭 كن أنت الكوكب</h2><p>الفريق المختار: <b style="color:var(--go)">${esc(S.teams[a.t].n)}</b> — اختاروا طالبًا ليمثّل الكوكب دون ذكر اسمه!</p>${a.sh?`<div class="card" style="max-width:420px;margin:auto;text-align:right"><div class="c">${pl(a.p,90)}<h2>سري: ${P[a.p].n}</h2></div><ol style="line-height:2">${P[a.p].p.map(x=>`<li>${x}</li>`).join('')}</ol><div class="c"><button class="btn s" onclick="S.act.sh=false;R()">إخفاء البطاقة 🙈</button></div></div>`:`<div class="mystery">🎭</div><button class="btn o big" onclick="S.act.sh=true;snd('t');R()">اكشف البطاقة للطالب فقط 🤫</button>`}
+<div><b>احتساب نقاط الفريق:</b><br>${[10,20,30].map(n=>`<button class="btn g" ${a.paid?'disabled':''} onclick="S.teams[S.act.t].s+=${n};S.act.paid=true;snd('ok');sv();R()">+${n}</button>`).join('')}</div>${a.paid?'<div class="msg ok">تمت إضافة النقاط ✔</div>':''}<button class="btn" onclick="startAct()">طالب/كوكب جديد 🔄</button></div>`}
+function score(){const t=[...S.teams].sort((a,b)=>b.s-a.s);return`<div class="card c"><h2>🏆 لوحة النتائج</h2>${t.map((x,i)=>`<div class="chip ${i==0?'on':''}" style="display:block;margin:8px auto;max-width:420px;font-size:24px">${['🥇','🥈','🥉','4️⃣'][i]} ${esc(x.n)} — <b style="display:inline">${x.s}</b></div>`).join('')}<br><button class="btn o big" onclick="conf();go('win')">📣 إعلان الفريق الفائز</button><button class="btn" onclick="go('play')">العودة للجولات</button></div>`}
+function win(){const m=Math.max(...S.teams.map(t=>t.s)),w=S.teams.filter(t=>t.s==m);setTimeout(()=>{snd('ok');conf()},100);return`<div class="card c"><div class="win">🏆</div><h2>${w.length>1?'تعادل بين الأبطال!':'اللاعب الفائز'}</h2><h1>${w.map(x=>esc(x.n)).join(' و ')}</h1><h2>${m} نقطة 🌟</h2><p>أبطال الفضاء الصغار، رحلة موفقة في المجموعة الشمسية! 🚀</p><button class="btn" onclick="go('score')">النتائج</button><button class="btn g" onclick="resetAll(this)">إعادة اللعبة من البداية 🔁</button></div>`}
+function resetAll(b){if(b&&!b.dataset.c){b.dataset.t=b.textContent;b.dataset.c='1';b.textContent='⚠ اضغط مرة أخرى للتأكيد';setTimeout(()=>{b.dataset.c='';b.textContent=b.dataset.t},3000);return}S.teams=[];S.r=0;S.h=1;S.turn=0;S.failed=[];S.done=false;S.msg='';S.ord=null;S.act=null;go('start')}
+R();
+</script></body></html>
